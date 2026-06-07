@@ -17,8 +17,18 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :starts_at %>
-    <%= form.datetime_field :starts_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": show.errors[:starts_at].none?, "border-red-400 focus:outline-red-600": show.errors[:starts_at].any?}] %>
+    <%= form.label :city %>
+    <%= form.text_field :city, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": show.errors[:city].none?, "border-red-400 focus:outline-red-600": show.errors[:city].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :date %>
+    <%= form.date_field :date, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": show.errors[:date].none?, "border-red-400 focus:outline-red-600": show.errors[:date].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :show_time %>
+    <%= form.text_field :show_time, placeholder: "Doors 7 PM", class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": show.errors[:show_time].none?, "border-red-400 focus:outline-red-600": show.errors[:show_time].any?}] %>
   </div>
 
   <div class="inline">

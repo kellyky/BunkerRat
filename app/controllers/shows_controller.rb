@@ -65,6 +65,6 @@ class ShowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def show_params
-      params.require(:show).permit(:venue, :starts_at)
+      params.expect(show: [:venue, :city, :date, :show_time])
     end
 end

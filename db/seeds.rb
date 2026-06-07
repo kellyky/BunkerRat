@@ -7,32 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 # db/seeds.rb
-
-Show.find_or_create_by!(
-  venue: "Cactus Club",
-  starts_at: Time.zone.parse("2026-08-14 20:00"),
-)
-
-Show.find_or_create_by!(
-  venue: "X-Ray Arcade",
-  starts_at: Time.zone.parse("2026-08-22 19:00"),
-)
-
-Show.find_or_create_by!(
-  venue: "High Noon Saloon",
-  starts_at: Time.zone.parse("2026-09-05 20:30"),
-)
-
-Show.find_or_create_by!(
-  venue: "The Back Bar",
-  starts_at: Time.zone.parse("2026-09-18 19:30"),
-)
-
-Show.find_or_create_by!(
-  venue: "Mile of Music",
-  starts_at: Time.zone.parse("2026-08-01 14:00"),
-)#   end
 Band.destroy_all
+Show.destroy_all
 
 [
   "Fundamentals",
@@ -44,4 +20,40 @@ Band.destroy_all
   Band.find_or_create_by!(name:)
 end
 
+[
+  {
+    venue: "Cactus Club",
+    city: "Milwaukee",
+    date: Date.new(2026, 8, 14),
+    time: "Doors open at 7"
+  },
+  {
+    venue: "X-Ray Arcade",
+    city: "Cudahy",
+    date: Date.new(2026, 9, 5),
+    time: "8 PM"
+  },
+  {
+    venue: "High Noon Saloon",
+    city: "Madison",
+    date: Date.new(2026, 10, 17),
+    time: "Doors 6:30 PM"
+  },
+  {
+    venue: "The Bend Theater",
+    city: "West Bend",
+    date: Date.new(2026, 11, 7),
+    time: "7:30 PM"
+  }
+].each do |attributes|
+  Show.find_or_create_by!(
+    venue: attributes[:venue],
+    date: attributes[:date]
+  ) do |show|
+    show.city = attributes[:city]
+    show.time = attributes[:time]
+  end
+end
+
 puts "Seeded #{Band.count} bands"
+puts "Seeded #{Show.count} shows"

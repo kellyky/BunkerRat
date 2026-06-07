@@ -99,6 +99,7 @@ APP_PATH	bin/rails	/^APP_PATH = File.expand_path("..\/config\/application", __di
 APP_ROOT	bin/setup	/^APP_ROOT = File.expand_path("..", __dir__)$/;"	C
 ATTEMPTS_GAP	.kamal/hooks/pre-deploy.sample	/^ATTEMPTS_GAP = 10$/;"	C
 ActiveSupport	test/test_helper.rb	/^module ActiveSupport$/;"	m
+AddCityDateShowTimeToShows	db/migrate/20260607150842_add_city_date_show_time_to_shows.rb	/^class AddCityDateShowTimeToShows < ActiveRecord::Migration[8.1]$/;"	c
 AnonymousClass84762e030101	app/javascript/controllers/hello_controller.js	/^export default class extends Controller {$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	module:Bunkerrat
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
@@ -106,25 +107,58 @@ ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/
 ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
 ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
 ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+Band	app/models/band.rb	/^class Band < ApplicationRecord$/;"	c
+Band	test/models/band_test.rb	/^describe Band do$/;"	d
+BandsController	app/controllers/bands_controller.rb	/^class BandsController < ApplicationController$/;"	c
+BandsControllerTest	test/controllers/bands_controller_test.rb	/^class BandsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+BandsHelper	app/helpers/bands_helper.rb	/^module BandsHelper$/;"	m
 Bunkerrat	config/application.rb	/^module Bunkerrat$/;"	m
 CI	bin/ci	/^CI = ActiveSupport::ContinuousIntegration$/;"	C
+CreateBands	db/migrate/20260607143144_create_bands.rb	/^class CreateBands < ActiveRecord::Migration[8.1]$/;"	c
+CreateShows	db/migrate/20260607043146_create_shows.rb	/^class CreateShows < ActiveRecord::Migration[8.1]$/;"	c
+Fundamentals	test/fixtures/bands.yml	/^  name: Fundamentals$/;"	p
 GithubStatusChecks	.kamal/hooks/pre-deploy.sample	/^class GithubStatusChecks$/;"	c
+Jan & The Whatevers	test/fixtures/bands.yml	/^  name: Jan & The Whatevers$/;"	p
 MAX_ATTEMPTS	.kamal/hooks/pre-deploy.sample	/^MAX_ATTEMPTS = 72$/;"	C
 README	README.md	/^# README$/;"	c
-TestCase	test/test_helper.rb	/^  class TestCase$/;"	c	module:ActiveSupport
+RemoveCityAndStateFromShow	db/migrate/20260607051121_remove_city_and_state_from_show.rb	/^class RemoveCityAndStateFromShow < ActiveRecord::Migration[8.1]$/;"	c
+RemoveStartsAtFromShows	db/migrate/20260607150912_remove_starts_at_from_shows.rb	/^class RemoveStartsAtFromShows < ActiveRecord::Migration[8.1]$/;"	c
+Show	app/models/show.rb	/^class Show < ApplicationRecord$/;"	c
+Show	test/models/show_test.rb	/^describe Show do$/;"	d
+ShowsController	app/controllers/shows_controller.rb	/^class ShowsController < ApplicationController$/;"	c
+ShowsControllerTest	test/controllers/shows_controller_test.rb	/^class ShowsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+ShowsHelper	app/helpers/shows_helper.rb	/^module ShowsHelper$/;"	m
+TestCase	test/test_helper.rb	/^  class TestCase$/;"	c	module:ActiveSupport	mixin:extend:Minitest.Spec.DSL
+The Midnight Echoes	test/fixtures/bands.yml	/^  name: The Midnight Echoes/;"	p
 The change you wanted was rejected (422 Unprocessable Entity)	public/422.html	/^    <title>The change you wanted was rejected (422 Unprocessable Entity)<\/title>$/;"	j
 The page you were looking for doesn't exist (404 Not found)	public/404.html	/^    <title>The page you were looking for doesn't exist (404 Not found)<\/title>$/;"	j
 The server cannot process the request due to a client error (400 Bad Request)	public/400.html	/^    <title>The server cannot process the request due to a client error (400 Bad Request)<\/title/;"	j
+UpdateShowDateToDate	db/migrate/20260607200853_update_show_date_to_date.rb	/^class UpdateShowDateToDate < ActiveRecord::Migration[8.1]$/;"	c
 We're sorry, but something went wrong (500 Internal Server Error)	public/500.html	/^    <title>We're sorry, but something went wrong (500 Internal Server Error)<\/title>$/;"	j
 Your browser is not supported (406 Not Acceptable)	public/406-unsupported-browser.html	/^    <title>Your browser is not supported (406 Not Acceptable)<\/title>$/;"	j
+actually runs the test	test/models/band_test.rb	/^  it 'actually runs the test' do$/;"	i	describe:Band
+actually runs the test	test/models/show_test.rb	/^  it 'actually runs the test' do$/;"	i	describe:Show
 application	app/javascript/controllers/application.js	/^const application = Application.start()$/;"	C
+band_params	app/controllers/bands_controller.rb	/^    def band_params$/;"	f	class:BandsController
+change	db/migrate/20260607043146_create_shows.rb	/^  def change$/;"	f	class:CreateShows
+change	db/migrate/20260607051121_remove_city_and_state_from_show.rb	/^  def change$/;"	f	class:RemoveCityAndStateFromShow
+change	db/migrate/20260607143144_create_bands.rb	/^  def change$/;"	f	class:CreateBands
+change	db/migrate/20260607150842_add_city_date_show_time_to_shows.rb	/^  def change$/;"	f	class:AddCityDateShowTimeToShows
+change	db/migrate/20260607150912_remove_starts_at_from_shows.rb	/^  def change$/;"	f	class:RemoveStartsAtFromShows
+change	db/migrate/20260607200853_update_show_date_to_date.rb	/^  def change$/;"	f	class:UpdateShowDateToDate
 combined_status	.kamal/hooks/pre-deploy.sample	/^  attr_reader :remote_url, :git_sha, :github_client, :combined_status$/;"	A	class:GithubStatusChecks
 complete_count	.kamal/hooks/pre-deploy.sample	/^  def complete_count$/;"	f	class:GithubStatusChecks
 connect	app/javascript/controllers/hello_controller.js	/^  connect() {$/;"	m	class:AnonymousClass84762e030101
+create	app/controllers/bands_controller.rb	/^  def create$/;"	f	class:BandsController
+create	app/controllers/shows_controller.rb	/^  def create$/;"	f	class:ShowsController
 current_status	.kamal/hooks/pre-deploy.sample	/^  def current_status$/;"	f	class:GithubStatusChecks
 default	config/cache.yml	/^default: &default$/;"	a
 default	config/database.yml	/^default: &default$/;"	a
 default	config/queue.yml	/^default: &default$/;"	a
+destroy	app/controllers/bands_controller.rb	/^  def destroy$/;"	f	class:BandsController
+destroy	app/controllers/shows_controller.rb	/^  def destroy$/;"	f	class:ShowsController
+edit	app/controllers/bands_controller.rb	/^  def edit$/;"	f	class:BandsController
+edit	app/controllers/shows_controller.rb	/^  def edit$/;"	f	class:ShowsController
 en.hello	config/locales/en.yml	/^  hello: "Hello world"$/;"	k	locale:en
 error-description	public/400.html	/^        <svg height="172" viewBox="0 0 480 172" width="480" xmlns="http:\/\/www.w3.org\/2000\/sv/;"	I
 error-description	public/404.html	/^        <svg height="172" viewBox="0 0 480 172" width="480" xmlns="http:\/\/www.w3.org\/2000\/sv/;"	I
@@ -142,10 +176,21 @@ git_sha	.kamal/hooks/pre-deploy.sample	/^  attr_reader :remote_url, :git_sha, :g
 github_client	.kamal/hooks/pre-deploy.sample	/^  attr_reader :remote_url, :git_sha, :github_client, :combined_status$/;"	A	class:GithubStatusChecks
 github_repo_from_remote_url	.kamal/hooks/pre-deploy.sample	/^    def github_repo_from_remote_url$/;"	f	class:GithubStatusChecks
 hello	config/locales/en.yml	/^  hello: "Hello world"$/;"	k	locale:en
+index	app/controllers/bands_controller.rb	/^  def index$/;"	f	class:BandsController
+index	app/controllers/shows_controller.rb	/^  def index$/;"	f	class:ShowsController
 initialize	.kamal/hooks/pre-deploy.sample	/^  def initialize$/;"	f	class:GithubStatusChecks
+new	app/controllers/bands_controller.rb	/^  def new$/;"	f	class:BandsController
+new	app/controllers/shows_controller.rb	/^  def new$/;"	f	class:ShowsController
 ns8255f2ba0101	public/icon.svg	/^<svg width="512" height="512" xmlns="http:\/\/www.w3.org\/2000\/svg">$/;"	n	uri:http://www.w3.org/2000/svg
 refresh!	.kamal/hooks/pre-deploy.sample	/^  def refresh!$/;"	f	class:GithubStatusChecks
 remote_url	.kamal/hooks/pre-deploy.sample	/^  attr_reader :remote_url, :git_sha, :github_client, :combined_status$/;"	A	class:GithubStatusChecks
+set_band	app/controllers/bands_controller.rb	/^    def set_band$/;"	f	class:BandsController
+set_show	app/controllers/shows_controller.rb	/^    def set_show$/;"	f	class:ShowsController
+show	app/controllers/bands_controller.rb	/^  def show$/;"	f	class:BandsController
+show	app/controllers/shows_controller.rb	/^  def show$/;"	f	class:ShowsController
+show_params	app/controllers/shows_controller.rb	/^    def show_params$/;"	f	class:ShowsController
 state	.kamal/hooks/pre-deploy.sample	/^  def state$/;"	f	class:GithubStatusChecks
 system!	bin/setup	/^def system!(*args)$/;"	f
 total_count	.kamal/hooks/pre-deploy.sample	/^  def total_count$/;"	f	class:GithubStatusChecks
+update	app/controllers/bands_controller.rb	/^  def update$/;"	f	class:BandsController
+update	app/controllers/shows_controller.rb	/^  def update$/;"	f	class:ShowsController
