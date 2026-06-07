@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_07_051121) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_07_143144) do
+  create_table "bands", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shows", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "starts_at"

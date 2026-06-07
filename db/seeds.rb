@@ -32,3 +32,16 @@ Show.find_or_create_by!(
   venue: "Mile of Music",
   starts_at: Time.zone.parse("2026-08-01 14:00"),
 )#   end
+Band.destroy_all
+
+[
+  "Fundamentals",
+  "Jan & The Whatevers",
+  "The Midnight Echoes",
+  "Static Bloom",
+  "Neon Satellites"
+].each do |name|
+  Band.find_or_create_by!(name:)
+end
+
+puts "Seeded #{Band.count} bands"
