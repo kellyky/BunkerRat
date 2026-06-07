@@ -1,0 +1,8 @@
+[tasks.guard]
+description = 'Run guard - automatically (re)-run tests'
+run = 'bundle exec guard'
+[tasks.lint]
+description = 'Lint the application'
+run = 'bundle exec rubocop'
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
