@@ -1,0 +1,22 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# test/fixtures/shows.yml
+
+one:
+  venue: Cactus Club
+  starts_at: 2026-08-14 20:00:00
+
+two:
+  venue: X-Ray Arcade
+  starts_at: 2026-08-22 19:00:00
+
+three:
+  venue: High Noon Saloon
+  starts_at: 2026-09-05 20:30:00
+
+four:
+  venue: The Back Bar
+  starts_at: 2026-09-18 19:30:00
+
+five:
+  venue: Gibson Music Hall
+  starts_at: 2026-10-02 20:00:00
