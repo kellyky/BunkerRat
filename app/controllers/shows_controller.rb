@@ -4,6 +4,8 @@ class ShowsController < ApplicationController
   # GET /shows or /shows.json
   def index
     @shows = Show.all
+    @past_shows = Show.past.order(date: :desc)
+    @future_shows = Show.upcoming.order(:date)
   end
 
   # GET /shows/1 or /shows/1.json

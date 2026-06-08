@@ -1,7 +1,10 @@
 <div id="<%= dom_id show %>" class="w-full sm:w-auto my-5 space-y-5">
   <div>
-    <%= show.date.strftime("%A, %B %d, %Y") %> | <%= show.time %>
-    <br>
-    <%= show.venue %> (<%= show.city %>)
+    <p>
+      <%= show.date.strftime("%A, %B %d, %Y") %> | <%= show.time %>
+    </p>
+    <p>
+      <%= show.venue %> (<%= show.city %>)
+    </p>
   </div>
 </div>
