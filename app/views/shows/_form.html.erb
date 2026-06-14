@@ -32,7 +32,15 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :bands, class: "block font-medium mb-2" %>
+    <div class="flex items-center gap-2 mb-2">
+      <%= form.label :bands, class: "font-medium" %>
+
+      <%= link_to "+ Create New Band",
+                  new_band_path,
+                  target: "_blank",
+                  rel: "noopener",
+                  class: "text-sm font-medium text-blue-600 hover:text-blue-800" %>
+    </div>
 
     <div class="flex flex-wrap gap-3">
       <%= form.collection_check_boxes :band_ids,

@@ -23,6 +23,7 @@ class ShowsController < ApplicationController
 
   # POST /shows or /shows.json
   def create
+    Rails.logger.debug params.inspect
     @show = Show.new(show_params)
 
     respond_to do |format|
@@ -67,6 +68,6 @@ class ShowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def show_params
-      params.expect(show: [:venue, :city, :date, :show_time, band_ids: []])
+      params.require(:show).permit(:venue, :city, :date, :show_time, band_ids: [])
     end
 end
