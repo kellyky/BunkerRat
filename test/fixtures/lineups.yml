@@ -1,0 +1,11 @@
+fundamentals_at_cactus:
+  band: fundamentals
+  show: cactus_club
+
+jan_at_cactus:
+  band: jan
+  show: cactus_club
+
+fundamentals_at_xray:
+  band: fundamentals
+  show: xray_arcade

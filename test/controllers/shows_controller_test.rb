@@ -2,7 +2,7 @@ require "test_helper"
 
 class ShowsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @show = shows(:one)
+    @show = shows(:cactus_club)
   end
 
   test "should get index" do

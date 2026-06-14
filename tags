@@ -100,6 +100,7 @@ APP_ROOT	bin/setup	/^APP_ROOT = File.expand_path("..", __dir__)$/;"	C
 ATTEMPTS_GAP	.kamal/hooks/pre-deploy.sample	/^ATTEMPTS_GAP = 10$/;"	C
 ActiveSupport	test/test_helper.rb	/^module ActiveSupport$/;"	m
 AddCityDateShowTimeToShows	db/migrate/20260607150842_add_city_date_show_time_to_shows.rb	/^class AddCityDateShowTimeToShows < ActiveRecord::Migration[8.1]$/;"	c
+AddUniqueIndexToLineups	db/migrate/20260608022847_add_unique_index_to_lineups.rb	/^class AddUniqueIndexToLineups < ActiveRecord::Migration[8.1]$/;"	c
 AnonymousClass84762e030101	app/javascript/controllers/hello_controller.js	/^export default class extends Controller {$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	module:Bunkerrat
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
@@ -115,14 +116,17 @@ BandsHelper	app/helpers/bands_helper.rb	/^module BandsHelper$/;"	m
 Bunkerrat	config/application.rb	/^module Bunkerrat$/;"	m
 CI	bin/ci	/^CI = ActiveSupport::ContinuousIntegration$/;"	C
 CreateBands	db/migrate/20260607143144_create_bands.rb	/^class CreateBands < ActiveRecord::Migration[8.1]$/;"	c
+CreateLineups	db/migrate/20260608022428_create_lineups.rb	/^class CreateLineups < ActiveRecord::Migration[8.1]$/;"	c
 CreateShows	db/migrate/20260607043146_create_shows.rb	/^class CreateShows < ActiveRecord::Migration[8.1]$/;"	c
 Fundamentals	test/fixtures/bands.yml	/^  name: Fundamentals$/;"	p
 GithubStatusChecks	.kamal/hooks/pre-deploy.sample	/^class GithubStatusChecks$/;"	c
 Jan & The Whatevers	test/fixtures/bands.yml	/^  name: Jan & The Whatevers$/;"	p
+Lineup	app/models/lineup.rb	/^class Lineup < ApplicationRecord$/;"	c
 MAX_ATTEMPTS	.kamal/hooks/pre-deploy.sample	/^MAX_ATTEMPTS = 72$/;"	C
 README	README.md	/^# README$/;"	c
 RemoveCityAndStateFromShow	db/migrate/20260607051121_remove_city_and_state_from_show.rb	/^class RemoveCityAndStateFromShow < ActiveRecord::Migration[8.1]$/;"	c
 RemoveStartsAtFromShows	db/migrate/20260607150912_remove_starts_at_from_shows.rb	/^class RemoveStartsAtFromShows < ActiveRecord::Migration[8.1]$/;"	c
+RenameShowStartTime	db/migrate/20260607222502_rename_show_start_time.rb	/^class RenameShowStartTime < ActiveRecord::Migration[8.1]$/;"	c
 Show	app/models/show.rb	/^class Show < ApplicationRecord$/;"	c
 Show	test/models/show_test.rb	/^describe Show do$/;"	d
 ShowsController	app/controllers/shows_controller.rb	/^class ShowsController < ApplicationController$/;"	c
@@ -146,6 +150,9 @@ change	db/migrate/20260607143144_create_bands.rb	/^  def change$/;"	f	class:Crea
 change	db/migrate/20260607150842_add_city_date_show_time_to_shows.rb	/^  def change$/;"	f	class:AddCityDateShowTimeToShows
 change	db/migrate/20260607150912_remove_starts_at_from_shows.rb	/^  def change$/;"	f	class:RemoveStartsAtFromShows
 change	db/migrate/20260607200853_update_show_date_to_date.rb	/^  def change$/;"	f	class:UpdateShowDateToDate
+change	db/migrate/20260607222502_rename_show_start_time.rb	/^  def change$/;"	f	class:RenameShowStartTime
+change	db/migrate/20260608022428_create_lineups.rb	/^  def change$/;"	f	class:CreateLineups
+change	db/migrate/20260608022847_add_unique_index_to_lineups.rb	/^  def change$/;"	f	class:AddUniqueIndexToLineups
 combined_status	.kamal/hooks/pre-deploy.sample	/^  attr_reader :remote_url, :git_sha, :github_client, :combined_status$/;"	A	class:GithubStatusChecks
 complete_count	.kamal/hooks/pre-deploy.sample	/^  def complete_count$/;"	f	class:GithubStatusChecks
 connect	app/javascript/controllers/hello_controller.js	/^  connect() {$/;"	m	class:AnonymousClass84762e030101

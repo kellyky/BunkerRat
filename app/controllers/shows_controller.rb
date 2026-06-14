@@ -67,6 +67,6 @@ class ShowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def show_params
-      params.expect(show: [:venue, :city, :date, :show_time])
+      params.expect(show: [:venue, :city, :date, :show_time, band_ids: []])
     end
 end

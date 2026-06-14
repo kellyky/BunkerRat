@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_07_222502) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_08_022847) do
   create_table "bands", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "name"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lineups", force: :cascade do |t|
+    t.integer "band_id", null: false
+    t.datetime "created_at", null: false
+    t.integer "show_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_lineups_on_band_id"
+    t.index ["show_id", "band_id"], name: "index_lineups_on_show_id_and_band_id", unique: true
+    t.index ["show_id"], name: "index_lineups_on_show_id"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -25,4 +35,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_07_222502) do
     t.datetime "updated_at", null: false
     t.string "venue"
   end
+
+  add_foreign_key "lineups", "bands"
+  add_foreign_key "lineups", "shows"
 end

@@ -1,20 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-# test/fixtures/shows.yml
-
-one:
+cactus_club:
   venue: Cactus Club
   city: Milwaukee
   date: 2026-08-14
   time: "Doors 7 PM"
 
-two:
+xray_arcade:
   venue: X-Ray Arcade
   city: Cudahy
   date: 2026-09-05
   time: "8 PM"
-
-three:
-  venue: High Noon Saloon
-  city: Madison
-  date: 2026-10-17
-  time: "Doors 6:30 PM"

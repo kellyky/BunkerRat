@@ -2,7 +2,7 @@ require "test_helper"
 
 class BandsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @band = bands(:one)
+    @band = bands(:fundamentals)
   end
 
   test "should get index" do

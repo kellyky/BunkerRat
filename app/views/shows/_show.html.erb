@@ -7,4 +7,5 @@
       <%= show.venue %> (<%= show.city %>)
     </p>
   </div>
+  <%= show.bands.map(&:name).to_sentence %>
 </div>

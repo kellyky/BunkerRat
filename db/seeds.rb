@@ -7,53 +7,57 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 # db/seeds.rb
+#
+Lineup.destroy_all
 Band.destroy_all
 Show.destroy_all
 
-[
-  "Fundamentals",
-  "Jan & The Whatevers",
-  "The Midnight Echoes",
-  "Static Bloom",
-  "Neon Satellites"
-].each do |name|
-  Band.find_or_create_by!(name:)
-end
+fundamentals = Band.create!(name: "Fundamentals")
+jan = Band.create!(name: "Jan & The Whatevers")
+midnight = Band.create!(name: "The Midnight Echoes")
+static_bloom = Band.create!(name: "Static Bloom")
 
-[
-  {
-    venue: "Cactus Club",
-    city: "Milwaukee",
-    date: Date.new(2026, 8, 14),
-    time: "Doors open at 7"
-  },
-  {
-    venue: "X-Ray Arcade",
-    city: "Cudahy",
-    date: Date.new(2026, 9, 5),
-    time: "8 PM"
-  },
-  {
-    venue: "High Noon Saloon",
-    city: "Madison",
-    date: Date.new(2026, 10, 17),
-    time: "Doors 6:30 PM"
-  },
-  {
-    venue: "The Bend Theater",
-    city: "West Bend",
-    date: Date.new(2026, 11, 7),
-    time: "7:30 PM"
-  }
-].each do |attributes|
-  Show.find_or_create_by!(
-    venue: attributes[:venue],
-    date: attributes[:date]
-  ) do |show|
-    show.city = attributes[:city]
-    show.time = attributes[:time]
-  end
-end
+# Past shows
+cactus_club = Show.create!(
+  venue: "Cactus Club",
+  city: "Milwaukee",
+  date: 2.months.ago.to_date,
+  time: "Doors 7 PM"
+)
+
+xray_arcade = Show.create!(
+  venue: "X-Ray Arcade",
+  city: "Cudahy",
+  date: 1.month.ago.to_date,
+  time: "8 PM"
+)
+
+# Upcoming shows
+high_noon = Show.create!(
+  venue: "High Noon Saloon",
+  city: "Madison",
+  date: 1.month.from_now.to_date,
+  time: "Doors 6:30 PM"
+)
+
+bend_theater = Show.create!(
+  venue: "The Bend Theater",
+  city: "West Bend",
+  date: 2.months.from_now.to_date,
+  time: "7:30 PM"
+)
+
+cactus_club.bands << fundamentals
+cactus_club.bands << jan
+
+xray_arcade.bands << fundamentals
+
+high_noon.bands << midnight
+high_noon.bands << static_bloom
+
+bend_theater.bands << fundamentals
+bend_theater.bands << midnight
 
 puts "Seeded #{Band.count} bands"
 puts "Seeded #{Show.count} shows"
+puts "Seeded #{Lineup.count} lineups"
