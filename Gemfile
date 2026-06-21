@@ -73,3 +73,5 @@ end
 
 gem "test", "~> 1.0", group: :development
 
+
+gem "reek", "~> 6.5", group: :development

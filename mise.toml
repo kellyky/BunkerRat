@@ -4,5 +4,8 @@ run = 'bundle exec guard'
 [tasks.lint]
 description = 'Lint the application'
 run = 'bundle exec rubocop'
+[tasks.reek]
+description = 'Hunt for code smells'
+run = 'bundle exec reek .'
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
