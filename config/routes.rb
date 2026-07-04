@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resource :session
+  resource :sign_up
   resources :passwords, param: :token
   resources :bands
   resources :shows
