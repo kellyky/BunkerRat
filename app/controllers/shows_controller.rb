@@ -1,5 +1,6 @@
 class ShowsController < ApplicationController
-  before_action :set_show, only: %i[ show edit update destroy ]
+  before_action :set_show, only: %i[show edit update destroy]
+  allow_unauthenticated_access only: %i[index show]
 
   # GET /shows or /shows.json
   def index

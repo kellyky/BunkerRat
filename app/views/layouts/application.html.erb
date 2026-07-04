@@ -40,7 +40,11 @@
                       class: "text-gray-700 hover:text-black" %>
         </div>
 
-        <%= link_to "Log Out", session_path, data: { turbo_method: :delete } %>
+        <% if authenticated? %>
+          <%= link_to "Log Out", session_path, data: { turbo_method: :delete } %>
+        <% else %>
+          <%= link_to "Log In", new_session_path %>
+        <% end %>
       </nav>
     </header>
 

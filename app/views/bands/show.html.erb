@@ -13,17 +13,19 @@
       <%= @band.name %>
     </h1>
 
-    <div class="mb-10 flex flex-wrap justify-center gap-2">
-      <%= link_to "Edit this band",
-          edit_band_path(@band),
-          class: "rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 font-medium" %>
+    <% if authenticated? %>
+      <div class="mb-10 flex flex-wrap justify-center gap-2">
+        <%= link_to "Edit this band",
+            edit_band_path(@band),
+            class: "rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 font-medium" %>
 
-      <%= button_to "Destroy this band",
-          @band,
-          method: :delete,
-          class: "rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer",
-          data: { turbo_confirm: "Are you sure?" } %>
-    </div>
+        <%= button_to "Destroy this band",
+            @band,
+            method: :delete,
+            class: "rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer",
+            data: { turbo_confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
 
     <!-- Upcoming Shows -->
 
