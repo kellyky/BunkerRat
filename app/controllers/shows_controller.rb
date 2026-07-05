@@ -1,6 +1,8 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: %i[show edit update destroy]
   allow_unauthenticated_access only: %i[index show]
+  admin_access_only except: %i[index show]
+
 
   def index
     @shows = Show.all
@@ -22,6 +24,7 @@ class ShowsController < ApplicationController
     Rails.logger.debug params.inspect
     @show = Show.new(show_params)
 
+    binding.irb
     if @show.save
       redirect_to @show, notice: "Show was successfully created."
     else

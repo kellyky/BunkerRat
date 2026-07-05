@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
   before_action :set_band, only: %i[show edit update destroy]
   allow_unauthenticated_access only: %i[index show]
+  admin_access_only except: %i[index show]
 
   def index
     @bands = Band.all
