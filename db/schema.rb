@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.1].define(version: 2026_07_04_232421) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
+
   create_table "bands", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "name"
@@ -18,9 +21,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_04_232421) do
   end
 
   create_table "lineups", force: :cascade do |t|
-    t.integer "band_id", null: false
+    t.bigint "band_id", null: false
     t.datetime "created_at", null: false
-    t.integer "show_id", null: false
+    t.bigint "show_id", null: false
     t.datetime "updated_at", null: false
     t.index ["band_id"], name: "index_lineups_on_band_id"
     t.index ["show_id", "band_id"], name: "index_lineups_on_show_id_and_band_id", unique: true
@@ -32,7 +35,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_04_232421) do
     t.string "ip_address"
     t.datetime "updated_at", null: false
     t.string "user_agent"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
