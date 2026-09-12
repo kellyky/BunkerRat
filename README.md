@@ -1,24 +1,5 @@
-# README
+# BunkerRat Records | Upcoming Shows
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Friday September 25, 2026 @ 5-10pm**
+* Eternal superjam with Nick Verbos and company
+* Voyaguer Bookstore - 2212 S Kinnickinnic Ave, Milwaukee, WI 53207
