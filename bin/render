@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'erb'
+
+def render_partial(file)
+   File.read("app/views/partials/#{file}.html.erb")
+end 
+
+def render_template(file_name)
+   index    = File.read("app/views/#{file_name}.html.erb")
+   renderer = ERB.new(index, trim_mode: '%<>') 
+   output   = renderer.result(binding) 
+
+   File.write("#{file_name}.html", output)
+end
+
+files = Dir.glob('app/views/*.html.erb').each do |file|
+   file_basename = File.basename(file, '.html.erb')
+   render_template(file_basename)
+end
+

@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shows, music, and musicians from the Bunker.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>BunkerRatRecords</title>
+    <style>
+      li {
+        padding: 1rem 1rem;
+        font-weight: 100;
+      }
+
+      time {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body class="p-5 min-h-screen bg-[url('./img/spacy-background.webp')] bg-cover bg-center bg-no-repeat backdrop-brightness-20 text-center">
+    <h1 class="text-red-500 text-4xl font-[Impact]">BunkerRatRecords</h1>
+    <%= render_partial('_shows') %>
+  </body>
+</html>
+
